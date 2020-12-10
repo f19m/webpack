@@ -31,7 +31,6 @@ export default function create(el, classNames, child, parent, ...dataAttr) {
       element.innerHTML = child.toString();
     }
   } catch (e) {
-    console.log(child);
     throw new Error(`${e};    child = ${child};`);
   }
 
@@ -44,13 +43,12 @@ export default function create(el, classNames, child, parent, ...dataAttr) {
       try {
         if (attrValue === '') {
           element.setAttribute(attrName, '');
-        } else if (attrName && attrName.toString().match(/value|id|placeholder|cols|rows|autocorrect|spellcheck|src/)) {
+        } else if (attrName && attrName.toString().match(/value|href|target|style|type|for|id|placeholder|cols|rows|autocorrect|spellcheck|src/)) {
           element.setAttribute(attrName, attrValue);
         } else if (attrName) {
           element.dataset[attrName] = attrValue;
         }
       } catch (e) {
-        console.log(dataAttr);
         throw new Error(`${e};    dataAttr = ${dataAttr};  attrName=${attrName}  attrValue=${attrValue};`);
       }
     });

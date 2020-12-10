@@ -1,0 +1,33 @@
+$color-light-xl: #FFFFFF
+$color-dark-3xl: #292929
+
+
+=flex
+    display: flex
+
+=flex-direction($direction) 
+    +flex
+    flex-direction: $direction
+
+=flex-justify($justify-content) 
+    +flex
+    justify-content: $justify-content
+
+=flex-algin-justify($align-items, $justify-content) 
+    +flex
+    align-items: $align-items
+    justify-content: $justify-content
+
+=flex-direction-justify($direction, $justify-content) 
+    +flex
+    flex-direction: $direction
+    justify-content: $justify-content
+
+=flex-direction-algin-justify($direction, $align-items, $justify-content) 
+    +flex-direction-justify($direction, $justify-content) 
+    align-items: $align-items
+
+=flex-direction-algin($direction, $align-items)    
+    +flex-direction($direction) 
+    align-items: $align-items
+
